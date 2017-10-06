@@ -1,0 +1,30 @@
+version: '2'
+networks:
+  default:
+     external:
+        name: grafana_network
+services:
+  grafana-storage:
+    image: busybox:latest
+    volumes:
+      - /var/lib/grafana
+  grafana:
+    image: grafana/grafana
+    env_file:
+      - settings/grafana.env
+    volumes_from:
+      - grafana-storage
+    ports:
+      - "3000:3000"
+  grafana-influxdb:
+    image: influxdb
+    volumes:
+      - /var/lib/influxdb
+    env_file:
+      - settings/influxdb.env
+    ports:
+      - "8086:8086"
+  influxdb-feeder:
+    build: .
+    env_file:
+      - settings/scripts.env
