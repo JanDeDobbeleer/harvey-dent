@@ -1,6 +1,6 @@
 import schedule
 import time
-from tickets import get_jira_info
+from scripts.tickets import get_jira_info
 
 # print a pretty logo, because fork yeah
 with open('scheduler.txt', 'r') as fin:

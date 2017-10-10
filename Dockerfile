@@ -1,8 +1,8 @@
 FROM python:alpine
 
-WORKDIR /scripts
+WORKDIR /scheduler
 
-ADD ./scripts/ /scripts/
+ADD ./scheduler/ /scheduler/
 
 RUN pip install -r requirements.txt
 
