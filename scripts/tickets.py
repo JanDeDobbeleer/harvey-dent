@@ -45,10 +45,13 @@ def jira_login(endpoint, user, password):
         print(exn)
 
 def get_jira_info():
-    print('Running JIRA queries')
-    jira = jira_login(os.environ.get('JIRA_ENDPOINT'), os.environ.get('JIRA_USER'), os.environ.get('JIRA_USER_PASSWORD'))
-    tstamp = int(time.time()) * 10**9
-    for (db_key, jira_filter) in COUNT_QUERIES.items():
-        count = retrieve_issue_count(jira, jira_filter)
-        write_point(db_key, count, tstamp)
-        print("Inserted value {} for key {}".format(count, db_key))
+    try:
+        print('Running JIRA queries')
+        jira = jira_login(os.environ.get('JIRA_ENDPOINT'), os.environ.get('JIRA_USER'), os.environ.get('JIRA_USER_PASSWORD'))
+        tstamp = int(time.time()) * 10**9
+        for (db_key, jira_filter) in COUNT_QUERIES.items():
+            count = retrieve_issue_count(jira, jira_filter)
+            write_point(db_key, count, tstamp)
+            print("Inserted value {} for key {}".format(count, db_key))
+    except Exception as e:
+        print("Filed to retrieve JIRA queries: {}".format(e))
