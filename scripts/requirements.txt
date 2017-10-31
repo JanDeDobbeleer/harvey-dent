@@ -2,4 +2,4 @@ jira
 requests
 influxdb
 schedule
-BeautifulSoup
+beautifulsoup4
