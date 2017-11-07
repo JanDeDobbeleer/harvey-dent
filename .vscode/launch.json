@@ -10,7 +10,7 @@
         "stopOnEntry": true,
         "pythonPath": "${config:python.pythonPath}",
         "program": "${file}",
-        "cwd": "${workspaceRoot}",
+        "cwd": "${workspaceRoot}/scheduler",
         "env": {},
         "envFile": "${workspaceRoot}/settings/scripts.env",
         "debugOptions": [

@@ -1,9 +1,9 @@
 FROM python:alpine
 
-WORKDIR /scheduler
+WORKDIR /harvey
 
-ADD ./scheduler/ /scheduler/
+ADD ./harvey/ /harvey/
 
 RUN pip install -r requirements.txt
 
-CMD python -u scheduler.py
+CMD python -u harvey.py

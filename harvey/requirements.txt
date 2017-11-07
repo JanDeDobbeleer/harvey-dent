@@ -1,0 +1,6 @@
+jira
+requests
+graphitesend
+schedule
+beautifulsoup4
+PyYAML

@@ -5,7 +5,7 @@ networks:
         name: grafana_network
 services:
   grafana-storage:
-    image: busybox:latest
+    image: graphiteapp/graphite-statsd
     volumes:
       - /var/lib/grafana
   grafana:
@@ -16,15 +16,17 @@ services:
       - grafana-storage
     ports:
       - "3000:3000"
-  grafana-influxdb:
-    image: influxdb
-    volumes:
-      - /var/lib/influxdb
-    env_file:
-      - settings/influxdb.env
+  graphite:
+    image: graphiteapp/graphite-statsd
     ports:
-      - "8086:8086"
-  influxdb-feeder:
+      - "80:80"
+      - "2003-2004:2003-2004"
+      - "2023-2024:2023-2024"
+      - "8125:8125/udp"
+      - "8126:8126"
+  harvey:
     build: .
     env_file:
-      - settings/scripts.env
+      - settings/harvey.env
+    depends_on:
+      - "graphite"
