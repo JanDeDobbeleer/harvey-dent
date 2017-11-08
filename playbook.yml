@@ -1,0 +1,25 @@
+---
+- name: Deploy to PI
+  hosts: pi
+  remote_user: pi
+  vars:
+    remote_install_path: /home/{{ ansible_ssh_user }}/harvey
+  tasks:
+  - name: copy Harvey config file
+    copy: src=/home/jan/Git/harvey-dent/settings/harvey.env dest={{ remote_install_path }}/settings/harvey.env
+  - name: copy Grafana config file
+    copy: src=/home/jan/Git/harvey-dent/settings/grafana.env dest={{ remote_install_path }}/settings/grafana.env
+  - name: copy Harvey settings file
+    copy: src=/home/jan/Git/harvey-dent/harvey/tasks.yaml dest={{ remote_install_path }}/harvey/tasks.yaml
+  - name: stop docker container
+    command: docker-compose stop
+    args:
+        chdir: "{{ remote_install_path }}"
+  - git:
+      repo: https://github.com/JanJoris/harvey-dent.git
+      dest: "{{ remote_install_path }}"
+      update: yes
+  - name: start docker container
+    command: docker-compose up --build --no-deps harvey
+    args:
+      chdir: "{{ remote_install_path }}"
