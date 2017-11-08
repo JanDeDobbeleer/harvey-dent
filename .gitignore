@@ -1,5 +1,4 @@
 *.env
 /harvey/scripts/__pycache__/
-/harvey/scripts/__init__.py
 harvey/tasks.yaml
 playbook.retry
