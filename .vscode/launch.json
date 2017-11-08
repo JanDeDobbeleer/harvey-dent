@@ -10,9 +10,9 @@
         "stopOnEntry": true,
         "pythonPath": "${config:python.pythonPath}",
         "program": "${file}",
-        "cwd": "${workspaceRoot}/scheduler",
+        "cwd": "${workspaceRoot}/harvey",
         "env": {},
-        "envFile": "${workspaceRoot}/settings/scripts.env",
+        "envFile": "${workspaceRoot}/settings/harvey.env",
         "debugOptions": [
             "WaitOnAbnormalExit",
             "WaitOnNormalExit",

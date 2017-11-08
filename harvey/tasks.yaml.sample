@@ -1,0 +1,15 @@
+---
+script: JiraTickets
+interval: 1
+settings:
+  open_bugs: "Open bugs"
+---
+script: PlayStore
+interval: 2
+settings:
+  app_store_vikingapp_android: "com.vikingco.vikingapp"
+---
+script: AppStore
+interval: 2
+settings:
+  app_store_vikingapp_ios: "viking-app/id893916390"
