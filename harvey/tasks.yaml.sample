@@ -7,9 +7,14 @@ settings:
 script: PlayStore
 interval: 2
 settings:
-  app_store_vikingapp_android: "com.vikingco.vikingapp"
+  vikingapp_android: "com.vikingco.vikingapp"
 ---
 script: AppStore
 interval: 2
 settings:
-  app_store_vikingapp_ios: "viking-app/id893916390"
+  vikingapp_ios: "viking-app/id893916390"
+---
+script: Crashlytics
+interval: 30
+settings:
+  vikingapp_ios: "534bd81994eee1f9ee00038a|5388aa88e3de5099ba465c87"
