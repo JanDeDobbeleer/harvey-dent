@@ -52,7 +52,7 @@ class Crashlytics(ScriptBase):
         user_data = requests.get(users_url,
                                  cookies=sessions_data.cookies,
                                  headers=headers)
-        app_details['user_count'] = user_data.json()['series'][-1][1]
+        app_details['active_user_count'] = user_data.json()['series'][-1][1]
         return app_details
 
     def _write_points(self, key, details, timestamp):
