@@ -1,0 +1,28 @@
+version: '2'
+networks:
+  default:
+     external:
+        name: grafana_network
+services:
+  grafana:
+    image: grafana/grafana
+    env_file:
+      - settings/grafana.env
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    ports:
+      - "3000:3000"
+  db:
+    image: influxdb:alpine
+    env_file:
+      - settings/influxdb.env
+    ports:
+      - "8086:8086"
+  harvey:
+    build: .
+    env_file:
+      - settings/harvey.env
+    depends_on:
+      - "db"
+volumes:
+  grafana-storage:

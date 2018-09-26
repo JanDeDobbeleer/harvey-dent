@@ -1,0 +1,44 @@
+---
+harvester: JiraTicketCounter
+interval: 5
+config:
+  jira_user: "user"
+  jira_user_password: "password"
+  jira_endpoint: "https://myjira.atlassian.net"
+settings:
+  jira.tickets.sprint.in_progress: "project = MYPROJECT and status = 'In Progress' and Sprint in openSprints()"
+---
+harvester: JiraStoryPointCounter
+interval: 1
+config:
+  jira_user: "user"
+  jira_user_password: "password"
+  jira_endpoint: "https://myjira.atlassian.net"
+  story_points_field: "customfield_10708"
+settings:
+  jira.tickets.sprint.story_points: "project = MYPROJECT and status != 'Done' and Sprint in openSprints()"
+---
+harvester: PlayStore
+interval: 60
+settings:
+  playstore.candy_crush: "com.king.candycrushsaga"
+---
+harvester: AppStore
+interval: 60
+settings:
+  appstore.candy_crush: "candy-crush-saga/id553834731"
+---
+harvester: TempoExporter
+interval: 60
+config:
+  jira_user: "user"
+  jira_user_password: "password"
+  jira_endpoint: "https://myjira.atlassian.net"
+  excluded_jira_projects:
+settings:
+  jira.tempo.teams.myteam: "3"
+---
+harvester: Crashlytics
+interval: 30
+settings:
+  myapp: "534bd81994eee1f345e00038a|5388aa88e4g4r44099ba465c87"

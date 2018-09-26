@@ -1,0 +1,8 @@
+jira==2.0.0
+requests==2.19.1
+schedule==0.5.0
+beautifulsoup4==4.6.3
+PyMySQL==0.9.2
+PyYAML==3.13
+influxdb==5.2.0
+typing-extensions==3.6.5

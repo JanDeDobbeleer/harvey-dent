@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/.mypy_cache": true
+    },
+    "python.linting.flake8Args": [
+        "--config=setup.cfg"
+    ],
+    "python.linting.mypyArgs": [
+        "--config-file=setup.cfg"
+    ]
+}
