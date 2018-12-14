@@ -2,6 +2,10 @@
 *.yml
 *.env
 
+# Project files
+harvey/tasks.yaml.prod
+to-do.md
+
 
 # Created by https://www.gitignore.io/api/python,ansible,visualstudiocode
 
