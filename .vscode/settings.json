@@ -7,5 +7,9 @@
     ],
     "python.linting.mypyArgs": [
         "--config-file=setup.cfg"
-    ]
+    ],
+    "python.unitTest.pyTestArgs": [],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.pyTestEnabled": true
 }
