@@ -1,6 +1,7 @@
 __version__ = '1.0.0'
 from .playstore import PlayStore
 from .appstore import AppStore
+from .jiraboardinfo import JiraBoardInfo
 from .jiraticketcounter import JiraTicketCounter
 from .jirastorypointcounter import JiraStoryPointCounter
 from .sentry import Sentry
