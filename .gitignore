@@ -1,6 +1,7 @@
 *.yaml
 *.yml
 *.env
+!docker-compose.demo.yml
 
 # Project files
 harvey/tasks.yaml.prod
